@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Patient Satisfaction Predictor</title>
+</head>
+
+<body>
+    <h1>Hospital Patient Satisfaction Predictor</h1>
+    <form method="POST">
+        <label>Length of Stay (days):</label>
+        <input type="number" name="length_of_stay" required><br><br>
+
+        <label>Service:</label>
+        <select name="service" required>
+            <option value="emergency">Emergency</option>
+            <option value="surgery">Surgery</option>
+            <option value="general_medicine">General Medicine</option>
+            <option value="ICU">ICU</option>
+        </select><br><br>
+
+        <label>Available Beds:</label>
+        <input type="number" name="available_beds" required><br><br>
+
+        <label>Patient Demand:</label>
+        <input type="number" name="patient_demand" required><br><br>
+
+        <label>Patients Admitted:</label>
+        <input type="number" name="patients_admitted" required><br><br>
+
+        <label>Patients Refused:</label>
+        <input type="number" name="patients_refused" required><br><br>
+
+        <label>Staff Morale (0–100):</label>
+        <input type="number" name="staff_morale" required><br><br>
+
+        <button type="submit">Predict Satisfaction</button>
+    </form>
+
+    {% if prediction is not none %}
+    <h2>Predicted Satisfaction Score: {{ prediction }}</h2>
+    {% endif %}
+</body>
+
+</html>
